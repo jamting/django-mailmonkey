@@ -67,7 +67,7 @@ $(document).ready(function(){
 <div class="breadcrumbs">
      <a href="{% url admin:index %}">{% trans "Admin." %}</a> &rsaquo;
      <a href="{% url admin:app_list "newsletter" %}">{{ app_label|capfirst|escape }}</a> &rsaquo; 
-     <a href="{% url admin:newsletter_newsletter_changelist %}">{{ opts.verbose_name_plural|capfirst }}</a> &rsaquo; 
+     <a href="{% url admin:mailmonkey_newsletter_changelist %}">{{ opts.verbose_name_plural|capfirst }}</a> &rsaquo; 
      {{ title }}
 </div>
 {% endif %}
@@ -182,7 +182,7 @@ $(document).ready(function(){
     <div class="module" id="general-informations-module">
         <h2>{% trans "Informations" %}</h2>
 	<h3>{% trans "Recipients" %}</h3>
-	<p>{{ stats.mails_to_send }} <a href="{% url admin:newsletter_mailinglist_change object.mailing_list.pk %}">{% trans "View" %}</a></p>
+	<p>{{ stats.mails_to_send }} <a href="{% url admin:mailmonkey_mailinglist_change object.mailing_list.pk %}">{% trans "View" %}</a></p>
         <h3>{% trans "Status" %}</h3>
 	<p>{{ object.get_status_display }} {% if stats.remaining_mails %}<span class="mini quiet">(-{{ stats.remaining_mails }})</span>{% endif %}</p>
 	<h3>{% trans "Sending date" %}</h3>
