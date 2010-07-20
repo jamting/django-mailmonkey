@@ -13,7 +13,6 @@ from django.contrib.contenttypes.models import ContentType
 from django.contrib.auth.models import Group
 from django.utils.encoding import force_unicode
 
-from tagging.fields import TagField
 from mailmonkey.managers import ContactManager
 from mailmonkey.settings import DEFAULT_HEADER_REPLY
 from mailmonkey.settings import DEFAULT_HEADER_SENDER
@@ -95,13 +94,11 @@ class SMTPServer(models.Model):
 class Contact(models.Model):
     """Contact for emailing"""
     email = models.EmailField(_('email'), unique=True)
-    first_name = models.CharField(_('first name'), max_length=50, blank=True)
-    last_name = models.CharField(_('last name'), max_length=50, blank=True)
+    name = models.CharField(_('name'), max_length=100, blank=True)
 
     subscriber = models.BooleanField(_('subscriber'), default=True)
     valid = models.BooleanField(_('valid email'), default=True)
     tester = models.BooleanField(_('contact tester'), default=False)
-    tags = TagField(_('tags'))
 
     content_type = models.ForeignKey(ContentType, blank=True, null=True)
     object_id = models.PositiveIntegerField(blank=True, null=True)
@@ -124,8 +121,8 @@ class Contact(models.Model):
         return vcard_contact_export(self)
 
     def mail_format(self):
-        if self.first_name and self.last_name:
-            return '%s %s <%s>' % (self.last_name, self.first_name, self.email)
+        if self.name:
+            return '%s <%s>' % (self.name, self.email)
         return self.email
     mail_format.short_description = _('mail format')
 
@@ -135,9 +132,9 @@ class Contact(models.Model):
         return reverse('admin:newsletter_contact_change', args=(self.pk,))
 
     def __unicode__(self):
-        if self.first_name and self.last_name:
-            return '%s %s | %s' % (self.last_name, self.first_name, self.tags)
-        return '%s | %s' % (self.email, self.tags)
+        if self.name:
+            return '%s (%s)' % (self.name, self.email)
+        return '%s' % (self.email)
 
     class Meta:
         ordering = ('creation_date',)

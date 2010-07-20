@@ -21,12 +21,11 @@ from mailmonkey.utils.excel import ExcelResponse
 
 class ContactAdmin(admin.ModelAdmin):
     date_hierarchy = 'creation_date'
-    list_display = ('email', 'first_name', 'last_name', 'tags', 'tester', 'subscriber',
+    list_display = ('email', 'name', 'tester', 'subscriber',
                     'valid', 'total_subscriptions', 'creation_date', 'related_object_admin')
     list_filter = ('subscriber', 'valid', 'tester', 'creation_date', 'modification_date')
-    search_fields = ('email', 'first_name', 'last_name', 'tags')
-    fieldsets = ((None, {'fields': ('email', 'first_name', 'last_name')}),
-                 (None, {'fields': ('tags',)}),
+    search_fields = ('email', 'name', )
+    fieldsets = ((None, {'fields': ('email', 'name')}),
                  (_('Status'), {'fields': ('subscriber', 'valid', 'tester')}),
                  (_('Advanced'), {'fields': ('object_id', 'content_type'),
                                   'classes': ('collapse',)}),
