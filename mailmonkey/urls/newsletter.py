@@ -1,7 +1,7 @@
-"""Urls for the emencia.django.newsletter Newsletter"""
+"""Urls for the mailmonkey Newsletter"""
 from django.conf.urls.defaults import *
 
-urlpatterns = patterns('emencia.django.newsletter.views.newsletter',
+urlpatterns = patterns('mailmonkey.views.newsletter',
                        url(r'^preview/(?P<slug>[-\w]+)/$',
                            'view_newsletter_preview',
                            name='newsletter_newsletter_preview'),

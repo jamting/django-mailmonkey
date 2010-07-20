@@ -14,11 +14,11 @@ from django.contrib.auth.models import Group
 from django.utils.encoding import force_unicode
 
 from tagging.fields import TagField
-from emencia.django.newsletter.managers import ContactManager
-from emencia.django.newsletter.settings import DEFAULT_HEADER_REPLY
-from emencia.django.newsletter.settings import DEFAULT_HEADER_SENDER
-from emencia.django.newsletter.settings import NEWSLETTER_BASE_PATH
-from emencia.django.newsletter.utils.vcard import vcard_contact_export
+from mailmonkey.managers import ContactManager
+from mailmonkey.settings import DEFAULT_HEADER_REPLY
+from mailmonkey.settings import DEFAULT_HEADER_SENDER
+from mailmonkey.settings import NEWSLETTER_BASE_PATH
+from mailmonkey.utils.vcard import vcard_contact_export
 
 # Patch for Python < 2.6
 try:

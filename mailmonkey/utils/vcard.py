@@ -38,7 +38,7 @@ def vcard_contacts_export_response(contacts, filename=''):
     return response
 
 def vcard_contact_import(vcard, workgroups=[]):
-    from emencia.django.newsletter.models import Contact
+    from mailmonkey.models import Contact
     
     defaults = {'email': vcard.email.value,
                 'first_name': vcard.n.value.given,

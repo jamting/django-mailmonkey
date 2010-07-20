@@ -1,5 +1,5 @@
-"""Context Processors for emencia.django.newsletter"""
-from emencia.django.newsletter.settings import MEDIA_URL
+"""Context Processors for mailmonkey"""
+from mailmonkey.settings import MEDIA_URL
 
 def media(request):
     """Adds media-related context variables to the context"""

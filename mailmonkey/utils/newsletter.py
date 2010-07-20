@@ -4,7 +4,7 @@ import urllib2
 from BeautifulSoup import BeautifulSoup, Tag
 from django.core.urlresolvers import reverse
 
-from emencia.django.newsletter.models import Link
+from mailmonkey.models import Link
 
 def get_webpage_content(url):
     """Return the content of the website

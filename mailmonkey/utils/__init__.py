@@ -1,4 +1,4 @@
-"""Utils for emencia.django.newsletter"""
+"""Utils for mailmonkey"""
 from django.template import Context, Template
 
 def render_string(template_string, context={}):

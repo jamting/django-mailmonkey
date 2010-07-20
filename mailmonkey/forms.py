@@ -1,9 +1,9 @@
-"""Forms for emencia.django.newsletter"""
+"""Forms for mailmonkey"""
 from django import forms
 from django.utils.translation import ugettext_lazy as _
 
-from emencia.django.newsletter.models import Contact
-from emencia.django.newsletter.models import MailingList
+from mailmonkey.models import Contact
+from mailmonkey.models import MailingList
 
 class MailingListSubscriptionForm(forms.ModelForm):
     """Form for subscribing to a mailing list"""

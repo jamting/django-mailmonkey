@@ -1,10 +1,10 @@
-"""Urls for the emencia.django.newsletter Mailing List"""
+"""Urls for the mailmonkey Mailing List"""
 from django.conf.urls.defaults import *
 
-from emencia.django.newsletter.forms import MailingListSubscriptionForm
-from emencia.django.newsletter.forms import AllMailingListSubscriptionForm
+from mailmonkey.forms import MailingListSubscriptionForm
+from mailmonkey.forms import AllMailingListSubscriptionForm
 
-urlpatterns = patterns('emencia.django.newsletter.views.mailing_list',
+urlpatterns = patterns('mailmonkey.views.mailing_list',
                        url(r'^unsubscribe/(?P<slug>[-\w]+)/(?P<uidb36>[0-9A-Za-z]+)-(?P<token>.+)/$',
                            'view_mailinglist_unsubscribe',
                            name='newsletter_mailinglist_unsubscribe'),

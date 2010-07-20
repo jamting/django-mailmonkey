@@ -1,7 +1,7 @@
-"""Statistics for emencia.django.newsletter"""
+"""Statistics for mailmonkey"""
 from django.db.models import Q
 
-from emencia.django.newsletter.models import ContactMailingStatus as Status
+from mailmonkey.models import ContactMailingStatus as Status
 
 def smart_division(a, b):
     """Not a really smart division, but avoid

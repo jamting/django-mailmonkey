@@ -1,8 +1,8 @@
 """Command for sending the newsletter"""
 from django.core.management.base import NoArgsCommand
 
-from emencia.django.newsletter.mailer import Mailer
-from emencia.django.newsletter.models import Newsletter
+from mailmonkey.mailer import Mailer
+from mailmonkey.models import Newsletter
 
 class Command(NoArgsCommand):
     """Send the newsletter in queue"""

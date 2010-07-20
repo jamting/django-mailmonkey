@@ -1,4 +1,4 @@
-"""Views for emencia.django.newsletter Tracking"""
+"""Views for mailmonkey Tracking"""
 import base64
 
 from django.http import HttpResponse
@@ -9,11 +9,11 @@ from django.utils.translation import ugettext as _
 from django.shortcuts import render_to_response
 from django.contrib.auth.decorators import login_required
 
-from emencia.django.newsletter.models import Link
-from emencia.django.newsletter.models import Newsletter
-from emencia.django.newsletter.utils.tokens import untokenize
-from emencia.django.newsletter.models import ContactMailingStatus
-from emencia.django.newsletter.settings import TRACKING_IMAGE
+from mailmonkey.models import Link
+from mailmonkey.models import Newsletter
+from mailmonkey.utils.tokens import untokenize
+from mailmonkey.models import ContactMailingStatus
+from mailmonkey.settings import TRACKING_IMAGE
 
 
 def view_newsletter_tracking(request, slug, uidb36, token):

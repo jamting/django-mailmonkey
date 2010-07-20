@@ -1,12 +1,12 @@
-"""Views for emencia.django.newsletter Mailing List"""
+"""Views for mailmonkey Mailing List"""
 from django.template import RequestContext
 from django.shortcuts import get_object_or_404
 from django.shortcuts import render_to_response
 
-from emencia.django.newsletter.utils.tokens import untokenize
-from emencia.django.newsletter.models import Newsletter
-from emencia.django.newsletter.models import MailingList
-from emencia.django.newsletter.models import ContactMailingStatus
+from mailmonkey.utils.tokens import untokenize
+from mailmonkey.models import Newsletter
+from mailmonkey.models import MailingList
+from mailmonkey.models import ContactMailingStatus
 
 
 def view_mailinglist_unsubscribe(request, slug, uidb36, token):

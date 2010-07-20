@@ -1,4 +1,4 @@
-"""Views for emencia.django.newsletter Newsletter"""
+"""Views for mailmonkey Newsletter"""
 from django.template import RequestContext
 from django.shortcuts import get_object_or_404
 from django.shortcuts import render_to_response
@@ -7,13 +7,13 @@ from django.contrib.sites.models import Site
 from django.contrib.auth.decorators import login_required
 from django.template.loader import render_to_string as render_file
 
-from emencia.django.newsletter.models import Newsletter
-from emencia.django.newsletter.models import ContactMailingStatus
-from emencia.django.newsletter.utils import render_string
-from emencia.django.newsletter.utils.newsletter import body_insertion
-from emencia.django.newsletter.utils.newsletter import track_links
-from emencia.django.newsletter.utils.tokens import untokenize
-from emencia.django.newsletter.settings import TRACKING_LINKS
+from mailmonkey.models import Newsletter
+from mailmonkey.models import ContactMailingStatus
+from mailmonkey.utils import render_string
+from mailmonkey.utils.newsletter import body_insertion
+from mailmonkey.utils.newsletter import track_links
+from mailmonkey.utils.tokens import untokenize
+from mailmonkey.settings import TRACKING_LINKS
 
 def render_newsletter(request, slug, context):
     """Return a newsletter in HTML format"""

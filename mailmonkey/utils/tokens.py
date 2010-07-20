@@ -1,10 +1,10 @@
-"""Tokens system for emencia.django.newsletter"""
+"""Tokens system for mailmonkey"""
 from django.conf import settings
 from django.http import Http404
 from django.shortcuts import  get_object_or_404
 from django.utils.http import int_to_base36, base36_to_int
 
-from emencia.django.newsletter.models import Contact
+from mailmonkey.models import Contact
 
 class ContactTokenGenerator(object):
     """ContactTokengenerator for the newsletter

@@ -1,4 +1,4 @@
-"""Views for emencia.django.newsletter statistics"""
+"""Views for mailmonkey statistics"""
 import csv
 from datetime import timedelta
 
@@ -12,13 +12,13 @@ from django.shortcuts import render_to_response
 from django.contrib.auth.decorators import login_required
 from django.template.defaultfilters import date
 
-from emencia.django.newsletter.utils.ofc import Chart
-from emencia.django.newsletter.models import Newsletter
-from emencia.django.newsletter.models import ContactMailingStatus
-from emencia.django.newsletter.utils.statistics import get_newsletter_top_links
-from emencia.django.newsletter.utils.statistics import get_newsletter_statistics
-from emencia.django.newsletter.utils.statistics import get_newsletter_opening_statistics
-from emencia.django.newsletter.utils.statistics import get_newsletter_clicked_link_statistics
+from mailmonkey.utils.ofc import Chart
+from mailmonkey.models import Newsletter
+from mailmonkey.models import ContactMailingStatus
+from mailmonkey.utils.statistics import get_newsletter_top_links
+from mailmonkey.utils.statistics import get_newsletter_statistics
+from mailmonkey.utils.statistics import get_newsletter_opening_statistics
+from mailmonkey.utils.statistics import get_newsletter_clicked_link_statistics
 
 BG_COLOR = '#ffffff'
 GRID_COLOR = '#eeeeee'

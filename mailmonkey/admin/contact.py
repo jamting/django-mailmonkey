@@ -10,14 +10,14 @@ from django.utils.translation import ugettext as _
 from django.http import HttpResponseRedirect
 from django.contrib.admin.views.main import ChangeList
 
-from emencia.django.newsletter.models import Contact
-from emencia.django.newsletter.models import WorkGroup
-from emencia.django.newsletter.models import MailingList
-from emencia.django.newsletter.utils.workgroups import request_workgroups
-from emencia.django.newsletter.utils.workgroups import request_workgroups_contacts_pk
-from emencia.django.newsletter.utils.vcard import vcard_contacts_import
-from emencia.django.newsletter.utils.vcard import vcard_contacts_export_response
-from emencia.django.newsletter.utils.excel import ExcelResponse
+from mailmonkey.models import Contact
+from mailmonkey.models import WorkGroup
+from mailmonkey.models import MailingList
+from mailmonkey.utils.workgroups import request_workgroups
+from mailmonkey.utils.workgroups import request_workgroups_contacts_pk
+from mailmonkey.utils.vcard import vcard_contacts_import
+from mailmonkey.utils.vcard import vcard_contacts_export_response
+from mailmonkey.utils.excel import ExcelResponse
 
 class ContactAdmin(admin.ModelAdmin):
     date_hierarchy = 'creation_date'

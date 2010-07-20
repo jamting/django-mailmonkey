@@ -1,4 +1,4 @@
-"""Managers for emencia.django.newsletter"""
+"""Managers for mailmonkey"""
 from django.db import models
 
 class ContactManager(models.Manager):

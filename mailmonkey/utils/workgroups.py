@@ -1,5 +1,5 @@
 """Utils for workgroups"""
-from emencia.django.newsletter.models import WorkGroup
+from mailmonkey.models import WorkGroup
 
 def request_workgroups(request):
     return WorkGroup.objects.filter(group__in=request.user.groups.all())

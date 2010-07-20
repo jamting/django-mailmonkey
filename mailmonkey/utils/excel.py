@@ -1,4 +1,4 @@
-"""ExcelResponse for emencia.django.newsletter"""
+"""ExcelResponse for mailmonkey"""
 # Based on http://www.djangosnippets.org/snippets/1151/
 import datetime
 

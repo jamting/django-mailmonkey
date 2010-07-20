@@ -6,16 +6,16 @@ from django.contrib import admin
 from django.conf.urls.defaults import *
 from django.utils.translation import ugettext as _
 
-from emencia.django.newsletter.models import Contact
-from emencia.django.newsletter.models import Newsletter
-from emencia.django.newsletter.models import Attachment
-from emencia.django.newsletter.models import MailingList
-from emencia.django.newsletter.mailer import Mailer
-from emencia.django.newsletter.utils.workgroups import request_workgroups
-from emencia.django.newsletter.utils.workgroups import request_workgroups_contacts_pk
-from emencia.django.newsletter.utils.workgroups import request_workgroups_newsletters_pk
-from emencia.django.newsletter.utils.workgroups import request_workgroups_mailinglists_pk
-from emencia.django.newsletter.utils.newsletter import get_webpage_content
+from mailmonkey.models import Contact
+from mailmonkey.models import Newsletter
+from mailmonkey.models import Attachment
+from mailmonkey.models import MailingList
+from mailmonkey.mailer import Mailer
+from mailmonkey.utils.workgroups import request_workgroups
+from mailmonkey.utils.workgroups import request_workgroups_contacts_pk
+from mailmonkey.utils.workgroups import request_workgroups_newsletters_pk
+from mailmonkey.utils.workgroups import request_workgroups_mailinglists_pk
+from mailmonkey.utils.newsletter import get_webpage_content
 
 
 class AttachmentAdminInline(admin.TabularInline):

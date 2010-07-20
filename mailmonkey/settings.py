@@ -1,4 +1,4 @@
-"""Settings for emencia.django.newsletter"""
+"""Settings for mailmonkey"""
 from django.conf import settings
 
 USE_WORKGROUPS = getattr(settings, 'NEWSLETTER_USE_WORKGROUPS', False)

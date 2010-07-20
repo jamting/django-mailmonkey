@@ -8,12 +8,12 @@ from django.shortcuts import get_object_or_404
 from django.utils.translation import ugettext as _
 from django.http import HttpResponseRedirect
 
-from emencia.django.newsletter.models import Contact
-from emencia.django.newsletter.models import MailingList
-from emencia.django.newsletter.utils.workgroups import request_workgroups
-from emencia.django.newsletter.utils.workgroups import request_workgroups_contacts_pk
-from emencia.django.newsletter.utils.workgroups import request_workgroups_mailinglists_pk
-from emencia.django.newsletter.utils.vcard import vcard_contacts_export_response
+from mailmonkey.models import Contact
+from mailmonkey.models import MailingList
+from mailmonkey.utils.workgroups import request_workgroups
+from mailmonkey.utils.workgroups import request_workgroups_contacts_pk
+from mailmonkey.utils.workgroups import request_workgroups_mailinglists_pk
+from mailmonkey.utils.vcard import vcard_contacts_export_response
 
 class MailingListAdmin(admin.ModelAdmin):
     date_hierarchy = 'creation_date'

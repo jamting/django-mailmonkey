@@ -1,4 +1,4 @@
-"""Mailer for emencia.django.newsletter"""
+"""Mailer for mailmonkey"""
 import mimetypes
 
 from smtplib import SMTP
@@ -27,14 +27,14 @@ from django.template.loader import render_to_string
 from django.utils.encoding import smart_str
 from django.utils.encoding import smart_unicode
 
-from emencia.django.newsletter.models import Newsletter
-from emencia.django.newsletter.models import ContactMailingStatus
-from emencia.django.newsletter.utils.tokens import tokenize
-from emencia.django.newsletter.utils.newsletter import track_links
-from emencia.django.newsletter.utils.newsletter import body_insertion
-from emencia.django.newsletter.settings import TRACKING_LINKS
-from emencia.django.newsletter.settings import TRACKING_IMAGE
-from emencia.django.newsletter.settings import INCLUDE_UNSUBSCRIPTION
+from mailmonkey.models import Newsletter
+from mailmonkey.models import ContactMailingStatus
+from mailmonkey.utils.tokens import tokenize
+from mailmonkey.utils.newsletter import track_links
+from mailmonkey.utils.newsletter import body_insertion
+from mailmonkey.settings import TRACKING_LINKS
+from mailmonkey.settings import TRACKING_IMAGE
+from mailmonkey.settings import INCLUDE_UNSUBSCRIPTION
 
 
 class Mailer(object):
